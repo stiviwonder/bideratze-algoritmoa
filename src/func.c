@@ -67,3 +67,36 @@ void print_top_info(topology_t topo){
     printf("\033[0m");
     free(t_info);
 }
+
+
+int *get_coord(int node, topology_t topo){
+
+    int *coord = malloc(topo.n*sizeof(int));
+    int n, i = 0;
+
+    switch(topo.t){
+	case 0:
+	    break;
+	case 1:
+	    break;
+	case 2:
+	    n = node;
+	    while(n > 0){
+		coord[i] = n % 2;
+		n /= 2;
+		i++;
+	    }
+	    break;
+    }
+
+    return coord;
+}
+
+void print_coord(int *coord, int n){
+    int i;
+    printf(" (");
+    for (i=n-1; i>0; i--){
+	    printf("%d, ", coord[i]);
+    }
+    printf("%d)\n", coord[0]);
+}

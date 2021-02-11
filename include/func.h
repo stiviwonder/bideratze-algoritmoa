@@ -17,4 +17,7 @@ typedef struct topology{
 float *get_top_info(topology_t topo);
 void print_top_info(topology_t topo);
 
+int *get_coord(int node, topology_t topo);
+void print_coord(int* coord, int n);
+
 #endif

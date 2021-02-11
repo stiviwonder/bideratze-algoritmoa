@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 #include "../include/func.h"
 
 
@@ -45,14 +46,22 @@ int main(int argc, char* argv[]){
 
     print_top_info(topo);
 
-    //printf("Iturburu-nodoa (0-%d)", topo.k);
-    //scanf("%d", &node_s);
-    //printf("Helburu-nodoa (0-%d)", topo.k);
-    //scanf("%d", &node_f);
+    double nodo_kop = pow(topo.k, topo.n);
 
-    // print_coord(node_s, topo);
-    // print_coord(node_f, topo);
+    printf("\nIturburu-nodoa (0-%.0f) > ", nodo_kop-1);
+    scanf("%d", &node_s);
+    printf("Helburu-nodoa (0-%.0f) > ", nodo_kop-1);
+    scanf("%d", &node_f);
+
+    printf("\n	%d Nodoen koordenatuak: ", node_s);
+    print_coord(get_coord(node_s, topo), topo.n);
+    printf("	%d Nodoen koordenatuak: ", node_f);
+    print_coord(get_coord(node_f, topo), topo.n);
     
+    int test = node_s ^ node_f;
+    print_coord(get_coord(test, topo), topo.n);
+
+
     // be = get_be(node_s, node_f, topo);
     // print_be(be);
     
