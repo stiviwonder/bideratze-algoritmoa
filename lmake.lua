@@ -1,6 +1,7 @@
 lmake_compatibility_version(1)
 
-src_files = lmake_find("src/*c");
+--src_files = lmake_find("src/*c");
+src_files = "src/main.c src/func.c";
 --link_files = lmake_find("build/*.o");
 link_files = "build/main.c.o build/func.c.o";
 
@@ -21,5 +22,5 @@ function clean()
 end
 
 function run()
-	lmake_exec("bid_alg")
+	lmake_exec("./bid_alg")
 end
