@@ -91,6 +91,9 @@ int *get_coord(int node, topology_t topo){
 		n /= 2;
 		i--;
 	    }
+	    for (;i>=0;i--){
+		coord[i] = 0;
+	    }
 	    break;
     }
 
