@@ -27,4 +27,5 @@ int get_n_dis(int *be, int n);
 
 int get_node(int *coord, topology_t topo);
 void print_pathNodes(int *c_nodes, int *be, topology_t topo);
+long fact(int n);
 #endif

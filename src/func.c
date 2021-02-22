@@ -226,3 +226,11 @@ void print_pathNodes(int *c_nodes, int *be, topology_t topo){
 	    break;
     }
 }
+
+long fact(int n){
+    long fact = 1, i;
+    for (i = 1; i <= n; ++i) {
+	fact *= i;
+    }
+    return fact;
+}

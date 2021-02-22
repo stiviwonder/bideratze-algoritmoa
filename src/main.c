@@ -9,6 +9,9 @@ int main(int argc, char* argv[]){
     topology_t topo;
     int node_s, node_f; //node_s = start node | node_f = final node
     int *be;
+    int dis;
+    long bide_kop;
+
 
     printf("\033[1;31m");   // color red
     printf("      ____  _     _           _        _               \n");
@@ -80,7 +83,13 @@ int main(int argc, char* argv[]){
 	printf("	Bideratze-erregistroa:   ");
 	print_be(be, topo.n);
 
-	printf("	Nodoen arteko distantzia: %d\n", get_n_dis(be, topo.n));
+	dis = get_n_dis(be, topo.n);
+	bide_kop = fact((long)dis);
+	printf("	Nodoen arteko distantzia: %d\n", dis);
+	if (dis <= 12)
+	    printf("        Bide alternatibe kopurua: %ld\n", bide_kop); 
+	else
+	    printf("        Bide alternatibe kopurua: --    (dis <= 12 denean)\n"); 
 	printf("	Tarteko nodoak (DOR):\n");
 	print_pathNodes(c_nodes, be, topo);
 
